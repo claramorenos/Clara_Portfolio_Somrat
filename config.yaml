@@ -15,10 +15,10 @@ markup:
 params:
   author: somrat
   description: This is meta description
-  favicon: images/favicon.png
-  logo_dark: images/logo-dark.png
-  logo_light: images/logo.png
-  logo_width: 100px
+#  favicon: images/favicon.png
+#  logo_dark: images/logo-dark.png
+#  logo_light: images/logo.png
+#  logo_width: 100px
   plugins:
     css:
       - link: plugins/bootstrap/bootstrap.min.css
@@ -68,7 +68,7 @@ Languages:
           pre: '#'
           url: about
           weight: 2
-        - name: Service
+        #- name: Service
           pre: '#'
           url: service
           weight: 3
@@ -76,7 +76,7 @@ Languages:
           pre: '#'
           url: portfolio
           weight: 4
-        - name: Testimonial
+       # - name: Testimonial
           pre: '#'
           url: testimonial
           weight: 5
@@ -84,7 +84,7 @@ Languages:
           pre: '#'
           url: contact
           weight: 6
-        - name: Blog
+       # - name: Blog
           url: blog
           weight: 7
     weight: 1

@@ -9,11 +9,11 @@ custom_css: ""
 experience:
   enable: true
   experience_list:
-  - company: Fiverr.com
-    content: I work with HTML, CSS, and Javascript to create websites and web applications
+  - company: Stoneturn.com
+    content: Partnered with teams of experts in accounting, compliance, corporate fraud
       like Personal, Business, Blog, E-comerches etc.
-    duration: 2016-2018
-    name: Web Developer
+    duration: 2020-2021
+    name: Consultant
   - company: Fiverr.com
     content: Graphic design is art with a purpose. I love illustration, so logo desing
       is my favorite work. But i can do many things with graphics.
@@ -25,7 +25,7 @@ experience:
     duration: 2014-2018
     name: Database Manager
   title: EXPERIENCE
-image: images/backgrounds/portrait.jpg
+image: images/backgrounds/clara-picture.jpg
 skill:
   enable: true
   skill_list:
