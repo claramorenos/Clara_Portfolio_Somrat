@@ -3,9 +3,9 @@
     "path": "~/Desktop/Websit_ClaraMorenoSanchez/config.yaml",
     "project_path": "config.yaml",
     "type": "yaml",
-    "hash": "0",
+    "hash": "1931275558",
     "contents": "",
-    "dirty": true,
+    "dirty": false,
     "created": 1631699727597.0,
     "source_on_save": false,
     "relative_order": 3,
@@ -16,11 +16,11 @@
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1631633054,
+    "lastKnownWriteTime": 1631700699,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1631699745237,
+    "last_content_update": 1631700699948,
     "read_only": false,
     "read_only_alternatives": []
 }
