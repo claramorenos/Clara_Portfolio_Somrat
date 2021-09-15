@@ -1,5 +1,5 @@
 ---
-bg_image: images/backgrounds/full-nav-bg.jpg
+bg_image: images/backgrounds/background-main.jpg
 button:
   enable: true
   label: Contact me
@@ -14,8 +14,8 @@ occupations:
 - Data Analyst
 #- Database Manager
 slider_images:
-- images/slider/slider-1.jpg
-- images/slider/slider-2.jpg
-- images/slider/slider-3.jpg
+- images/slider/slider-4.jpg
+- images/slider/slider-5.jpg
+- images/slider/slider-6.jpg
 title: I'm Clara Moreno Sanchez
 ---
