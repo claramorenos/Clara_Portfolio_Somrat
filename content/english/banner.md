@@ -1,5 +1,5 @@
 ---
-bg_image: images/backgrounds/background-main.jpg
+#bg_image: images/backgrounds/background-main.jpg
 button:
   enable: true
   label: Contact me
