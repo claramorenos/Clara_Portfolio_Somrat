@@ -9,23 +9,25 @@ custom_css: ""
 experience:
   enable: true
   experience_list:
-  - company: Stoneturn.com
+  - company: https://stoneturn.com/uk/
     content: Partnered with teams of experts in accounting, compliance, corporate fraud
-      like Personal, Business, Blog, E-comerches etc.
-    duration: 2020-2021
+      and antimoney laundering to help companies mitigate and manage risks in their operations.
+    duration: 2019-2021
     name: Consultant
-  - company: Fiverr.com
-    content: Graphic design is art with a purpose. I love illustration, so logo desing
-      is my favorite work. But i can do many things with graphics.
-    duration: 2015-2018
-    name: Graphic Designer
-  - company: Polytechnic
-    content: Database management is among the fundamental processes in the software
-      field of computing. I know MS Access very well.
-    duration: 2014-2018
-    name: Database Manager
+  - company: https://www.takeda.com/en-gb/
+    content: Led a team on a challenge from a major biopharmaceutical company to determine the feasibility of a vertically integrated supply chain for human plasma products (PDMPs) that would provide a stable, and much needed, supply to emerging markets while maintaining a specific return on investment.
+    duration: 2018-2019
+    name: Takeda External Supply Chain Consultant
+  - company: https://www.wellington.com/
+    content: Supported the internal audit team by fully understanding, and taking part in, testing of controls. Working an a Third-Party Risk team consolidating third party relationship owners to later perform due diligence on critical third-party vendors.
+    duration: 2018-2018
+    name: Risk Services Intern
+  - company: https://home.kpmg/xx/en/home.html
+    content: Collaborated in closing various year end audits by scrutinizing financial statement and flagging material differences. 
+    duration: 2017-2017
+    name: Audit Co-op
   title: EXPERIENCE
-image: images/backgrounds/clara-picture.jpg
+image: images/backgrounds/portrait_cms.jpg
 skill:
   enable: true
   skill_list:
@@ -39,7 +41,7 @@ skill:
     percentage: 95%
   - name: Power Point
     percentage: 97%   
-  title: SKILL
+  title: SKILLS
 title: KNOW MORE <br> ABOUT ME
 ---
 
