@@ -27,7 +27,7 @@ experience:
     duration: 2017-2017
     name: Audit Co-op
   title: EXPERIENCE
-image: images/backgrounds/portrait_cms.jpg
+image: images/portrait_cms.jpg
 skill:
   enable: true
   skill_list:
