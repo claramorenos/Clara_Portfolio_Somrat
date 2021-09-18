@@ -13,7 +13,7 @@ service_list:
   name: Impact
 - image: images/icons/software-development.png
   name: ESG
-#- image: images/icons/mobile-app.png
-#  name: Mobile App Development
+- image: images/icons/psychology.png
+  name: Psychology in Business
 title: INTERESTS
 ---
