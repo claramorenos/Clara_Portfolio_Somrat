@@ -8,10 +8,10 @@ description: Nullam et orci eu lorem consequat tincidunt vivamus et sagittis mag
   sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem
   consequat tincidunt. Vivamus et sagittis tempus.
 draft: false
-image: pic07.jpg
+#image: pic07.jpg
 keywords: ""
 slug: clara
-title: Aliquam
+title: Pre Programme Project
 ---
 
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
@@ -76,7 +76,7 @@ geom_point() + geom_smooth(se = FALSE)</code></pre>
 <p>Next we need to add a title. Create a new plot, or extend plot1, using the <code>labs()</code> function to add an informative title to the plot.</p>
 <pre class="r"><code>plot1 + labs(title = &quot;Spain Life Exp Plot&quot;, x=&quot;Average Life Expactency&quot;, y=&quot;Year&quot;)</code></pre>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
-<p><img src="/blogs/clara_morenosanchez_files/figure-html/lifeExp_one_country_with_label-1.png" width="672" /></p>
+<p><img src="/english/portfolio/clara_morenosanchez_files/figure-html/lifeExp_one_country_with_label-1.png" width="672" /></p>
 <p>Secondly, produce a plot for all countries in the <em>continent</em> you come from. (Hint: map the <code>country</code> variable to the colour aesthetic. You also want to map <code>country</code> to the <code>group</code> aesthetic, so all points for each country are grouped together).</p>
 <pre class="r"><code>ggplot(continent_data, mapping = aes(x = year, y = lifeExp , colour = &#39;country&#39;, group = &#39;country&#39;))+
 geom_point() + 
@@ -85,7 +85,7 @@ geom_smooth(se = FALSE) +
 labs(title=&quot;Life Expectancy for Countries&quot;, x= &quot;Year&quot;, y=&quot;Average Life Expectancy&quot;) +
 NULL</code></pre>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
-<p><img src="/blogs/clara_morenosanchez_files/figure-html/lifeExp_one_continent-1.png" width="672" /></p>
+<p><img src="/english/portfolio/clara_morenosanchez_files/figure-html/lifeExp_one_continent-1.png" width="672" /></p>
 <p>Finally, using the original <code>gapminder</code> data, produce a life expectancy over time graph, grouped (or faceted) by continent. We will remove all legends, adding the <code>theme(legend.position="none")</code> in the end of our ggplot.</p>
 <pre class="r"><code>ggplot(data = gapminder , mapping = aes(x = year , y = lifeExp , colour= &#39;continent&#39;))+
 geom_point() + 
@@ -94,7 +94,7 @@ facet_wrap(~continent) +
 theme(legend.position=&quot;none&quot;) + #remove all legends +
 labs(title=&quot;Life Expectancy for Continents&quot;, x= &quot;Year&quot;, y=&quot;Average Life Expectancy&quot;) </code></pre>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
-<p><img src="/blogs/clara_morenosanchez_files/figure-html/lifeExp_facet_by_continent-1.png" width="672" /></p>
+<p><img src="/english/portfolio/clara_morenosanchez_files/figure-html/lifeExp_facet_by_continent-1.png" width="672" /></p>
 <pre class="r"><code>NULL</code></pre>
 <pre><code>## NULL</code></pre>
 <p>Given these trends, what can you say about life expectancy since 1952? Again, don’t just say what’s happening in the graph. Tell some sort of story and speculate about the differences in the patterns.</p>
@@ -130,18 +130,18 @@ glimpse(brexit_results)</code></pre>
 Histogram &lt;- ggplot(brexit_results, aes(x = leave_share)) +
   geom_histogram(binwidth = 2.5) 
 Histogram + labs(title=&quot;Brexit Leave Results 2015 - Histogram&quot;, x= &quot;Percent of Leave Votes&quot;, y=&quot;Constituencys&quot;)</code></pre>
-<p><img src="/blogs/clara_morenosanchez_files/figure-html/brexit_histogram-1.png" width="672" /></p>
+<p><img src="/english/portfolio/clara_morenosanchez_files/figure-html/brexit_histogram-1.png" width="672" /></p>
 <pre class="r"><code># density plot-- think smoothed histogram
 Density_plot &lt;- ggplot(brexit_results, aes(x = leave_share)) +
   geom_density()
 Density_plot + labs(title=&quot;Brexit Leave Results 2015 - Density Plot&quot;, x= &quot;Percent of Leave Votes&quot;, y=&quot;Constituencys&quot;)</code></pre>
-<p><img src="/blogs/clara_morenosanchez_files/figure-html/brexit_histogram-2.png" width="672" /></p>
+<p><img src="/english/portfolio/clara_morenosanchez_files/figure-html/brexit_histogram-2.png" width="672" /></p>
 <pre class="r"><code># The empirical cumulative distribution function (ECDF) 
 ECDF &lt;- ggplot(brexit_results, aes(x = leave_share)) +
   stat_ecdf(geom = &quot;step&quot;, pad = FALSE) +
   scale_y_continuous(labels = scales::percent)
 ECDF + labs(title=&quot;Brexit Leave Results 2015 - ECDF&quot;, x= &quot;Percent of Leave Votes&quot;, y=&quot;Constituencys&quot;) </code></pre>
-<p><img src="/blogs/clara_morenosanchez_files/figure-html/brexit_histogram-3.png" width="672" /></p>
+<p><img src="/english/portfolio/clara_morenosanchez_files/figure-html/brexit_histogram-3.png" width="672" /></p>
 <p>One common explanation for the Brexit outcome was fear of immigration and opposition to the EU’s more open border policy. We can check the relationship (or correlation) between the proportion of native born residents (<code>born_in_uk</code>) in a constituency and its <code>leave_share</code>. To do this, let us get the correlation between the two variables</p>
 <pre class="r"><code>brexit_results %&gt;% 
   select(leave_share, born_in_uk) %&gt;% 
@@ -157,7 +157,7 @@ ECDF + labs(title=&quot;Brexit Leave Results 2015 - ECDF&quot;, x= &quot;Percent
   theme_bw() +
   labs(title=&quot;Brexit Leave Results Per Constituency (2015)&quot;, x= &quot;Percent of People Born in the UK&quot;, y=&quot;Percent of Leave Votes&quot;)</code></pre>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="/blogs/clara_morenosanchez_files/figure-html/brexit_immigration_plot-1.png" width="672" /></p>
+<p><img src="/english/portfolio/clara_morenosanchez_files/figure-html/brexit_immigration_plot-1.png" width="672" /></p>
 <pre class="r"><code>  NULL</code></pre>
 <pre><code>## NULL</code></pre>
 <p>You have the code for the plots, I would like you to revisit all of them and use the <code>labs()</code> function to add an informative title, subtitle, and axes titles to all plots.</p>
@@ -377,14 +377,14 @@ base_plot &lt;- animal_rescue %&gt;%
   theme_bw()
 
 base_plot + geom_histogram()</code></pre>
-<p><img src="/blogs/clara_morenosanchez_files/figure-html/plots_on_incident_cost_by_animal_group-1.png" width="672" /></p>
+<p><img src="/english/portfolio/clara_morenosanchez_files/figure-html/plots_on_incident_cost_by_animal_group-1.png" width="672" /></p>
 <pre class="r"><code>base_plot + geom_density()</code></pre>
-<p><img src="/blogs/clara_morenosanchez_files/figure-html/plots_on_incident_cost_by_animal_group-2.png" width="672" /></p>
+<p><img src="/english/portfolio/clara_morenosanchez_files/figure-html/plots_on_incident_cost_by_animal_group-2.png" width="672" /></p>
 <pre class="r"><code>base_plot + geom_boxplot()</code></pre>
-<p><img src="/blogs/clara_morenosanchez_files/figure-html/plots_on_incident_cost_by_animal_group-3.png" width="672" /></p>
+<p><img src="/english/portfolio/clara_morenosanchez_files/figure-html/plots_on_incident_cost_by_animal_group-3.png" width="672" /></p>
 <pre class="r"><code>base_plot + stat_ecdf(geom = &quot;step&quot;, pad = FALSE) +
   scale_y_continuous(labels = scales::percent)</code></pre>
-<p><img src="/blogs/clara_morenosanchez_files/figure-html/plots_on_incident_cost_by_animal_group-4.png" width="672" /></p>
+<p><img src="/english/portfolio/clara_morenosanchez_files/figure-html/plots_on_incident_cost_by_animal_group-4.png" width="672" /></p>
 <p>Which of these four graphs do you think best communicates the variability of the <code>incident_notional_cost</code> values? Also, can you please tell some sort of story (which animals are more expensive to rescue than others, the spread of values) and speculate about the differences in the patterns.</p>
 <blockquote>
 <p>I think the density plot best communicates the variability of the incident national costs. The continous line helps the human eye follow the amounts in costs and it’s slope is pronounced and clear.</p>
@@ -392,17 +392,4 @@ base_plot + geom_histogram()</code></pre>
 <blockquote>
 <p>When looking at what animals are more or less expensive to rescue it is important to look at both the variability of the min and max amount it costs and the variability in the density. Some animals like dogs usually cost less then 500 GDB to rescue, but there are rare times where it can cost up to 2,000. Looking at the data more generally however, Horses are the most expensive rescue.</p>
 </blockquote>
-</div>
-<div id="submit-the-assignment" class="section level1">
-<h1>Submit the assignment</h1>
-<p>Knit the completed R Markdown file as an HTML document (use the “Knit” button at the top of the script editor window) and upload it to Canvas.</p>
-<div id="details" class="section level2">
-<h2>Details</h2>
-<p>If you want to, please answer the following</p>
-<ul>
-<li>Who did you collaborate with: No One</li>
-<li>Approximately how much time did you spend on this problem set: 4 Hours</li>
-<li>What, if anything, gave you the most trouble: The initial set up of RStudio gave me trouble due to me switching computers right before the start of the course. The instructions for the assignment were very clear though. Thank you!</li>
-</ul>
-</div>
 </div>
