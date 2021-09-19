@@ -2,6 +2,7 @@
 title: "Climate Change Analysis"
 author: "Clara Moreno Sanchez"
 date: "`r Sys.Date()`"
+slug: Analysis_climatechange.Rmd
 output:
   html_document:
     theme: flatly
