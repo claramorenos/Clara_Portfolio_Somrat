@@ -1,16 +1,30 @@
 ---
 categories:
-- ""
-- ""
-date: "2017-10-31T22:42:51-05:00"
-description: Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna
-  sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa
-  sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem
-  consequat tincidunt. Vivamus et sagittis tempus.
+- design
+- development
+date: "2021-08-23T12:14:34+06:00"
+description: This is meta description.
 draft: false
-image: pic07.jpg
-keywords: ""
-slug: clara
+image: images/portfolio/item7.png
+slug: Analysis_climatechange.Rmd
+output:
+  html_document:
+    theme: flatly
+    highlight: zenburn
+    toc: yes
+project_info:
+#- content: John Doe
+#  icon: fas fa-user
+#  name: Client
+- content: link
+  icon: fas fa-link
+  name: Project Link
+#- content: Add whatever you want
+#  icon: fas fa-globe
+#  name: New Item
+#- content: This is in a loop
+#  icon: fas fa-redo
+#  name: Loop Item
 title: Pre Programme Project
 ---
 
@@ -20,6 +34,6 @@ title: Pre Programme Project
 #### Project Description
 I completed this project as an introductory exercise into R Studio and Markdown.
 
-#### [Link](clara_morenosanchez.html)
+#### [Link](clara_morenosanchez.Rmd)
 
 
