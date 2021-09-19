@@ -9,7 +9,7 @@ project_info:
 - content: John Doe
   icon: fas fa-user
   name: Client
-- content: https://examplesite.com/
+- content: file:///Users/claramoreno/Documents/MaM_Course_Documents/Applied_Statisitcs_R/Website/Websit_ClaraMorenoSanchez/data/clara_morenosanchez.html
   icon: fas fa-link
   name: Project Link
 - content: Add whatever you want
