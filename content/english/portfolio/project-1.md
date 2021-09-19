@@ -6,7 +6,7 @@ date: "2021-08-23T12:14:34+06:00"
 description: This is meta description.
 draft: false
 image: images/portfolio/item7.png
-slug: Analysis_climatechange.Rmd
+slug: clara
 output:
   html_document:
     theme: flatly
