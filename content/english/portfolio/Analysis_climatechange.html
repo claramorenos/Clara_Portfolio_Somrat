@@ -1,0 +1,182 @@
+---
+title: "Climate Change Analysis"
+author: "Clara Moreno Sanchez"
+date: "2021-09-20"
+slug: clara2
+image: images/portfolio/item7.png
+output:
+  html_document:
+    theme: flatly
+    highlight: zenburn
+    number_sections: yes
+    toc: yes
+    toc_float: yes
+    code_folding: show
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div id="analyzing-climate-change-through-temperature-anomalies" class="section level1">
+<h1>Analyzing Climate Change through Temperature Anomalies</h1>
+<p>By using R Studio and ggplot to analyze temperature variances between 1951-1980, the effects of climate change are illustrated.</p>
+<p>I will use date from <em>Combined Land-Surface Air and Sea-Surface Water Temperature Anomalies</em> in the Northern Hemisphere at <a href="https://data.giss.nasa.gov/gistemp">NASA’s Goddard Institute for Space Studies</a>. The <a href="https://data.giss.nasa.gov/gistemp/tabledata_v4/NH.Ts+dSST.txt">tabular data of temperature anomalies can be found here</a></p>
+<pre class="r"><code>weather &lt;- 
+  read_csv(&quot;https://data.giss.nasa.gov/gistemp/tabledata_v4/NH.Ts+dSST.csv&quot;, #retrieving data 
+           skip = 1, #skipping first line 
+           na = &quot;***&quot;) </code></pre>
+<p>I have modified the data by adding <code>skip</code> and <code>na</code>, and we select the year and the twelve month variables from the dataset while deleting the rest as they are non-relevant.</p>
+<div id="data-frame" class="section level2">
+<h2>Data Frame</h2>
+<pre class="r"><code>tidyweather &lt;- weather %&gt;%  select(1:13) %&gt;% pivot_longer(cols=2:13, names_to = &quot;Month&quot;, values_to=&quot;delta&quot;)
+
+tidyweather</code></pre>
+<pre><code>## # A tibble: 1,704 × 3
+##     Year Month delta
+##    &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;
+##  1  1880 Jan   -0.34
+##  2  1880 Feb   -0.5 
+##  3  1880 Mar   -0.22
+##  4  1880 Apr   -0.29
+##  5  1880 May   -0.05
+##  6  1880 Jun   -0.15
+##  7  1880 Jul   -0.17
+##  8  1880 Aug   -0.25
+##  9  1880 Sep   -0.22
+## 10  1880 Oct   -0.31
+## # … with 1,694 more rows</code></pre>
+</div>
+<div id="plot-of-date-and-delta-values" class="section level2">
+<h2>Plot of Date and Delta Values</h2>
+<p>To illustrate the trend of temperature anomalies, I will plot the data using a time-series scatter plot, and have add a trendline.</p>
+<pre class="r"><code># convert the date time datatype to plot chronologically
+tidyweather &lt;- tidyweather %&gt;%
+  mutate(date = ymd(paste(as.character(Year), Month, &quot;1&quot;)), 
+         month = month(date, label=TRUE),
+         year = year(date))
+
+# plotting the scatter plot of the data
+ggplot(tidyweather, aes(x=date, y = delta))+
+  geom_point()+
+  geom_smooth(color=&quot;red&quot;) +
+  theme_bw() +
+  labs (
+    title = &quot;Weather Anomalies&quot;,
+    x = &quot;Date&quot;,
+    y = &quot;Temperature deviation&quot;
+  )+
+  NULL</code></pre>
+<p><img src="/english/portfolio/Analysis_climatechange_files/figure-html/scatter_plot-1.png" width="648" style="display: block; margin: auto;" />
+As evidenced in the plot, the change in temperature from out base year were negative before the 1970s and then temperatures started to increase steeply afterwards.</p>
+<p>Visualizing the data on a per-month basis will help see if the effect of increasing temperature is more pronounced in some months than others.</p>
+<pre class="r"><code>#plotting the by-month scatter plot of data
+ggplot(tidyweather, aes(x=date, y = delta))+
+  geom_point()+
+  geom_smooth(color=&quot;red&quot;) +
+  geom_hline(yintercept = 0, color=&quot;orange&quot;)+
+  theme_bw() +
+  labs (
+    title = &quot;Weather Anomalies&quot;,
+    x = &quot;Date&quot;,
+    y = &quot;Temperature deviation&quot;
+  )+
+  facet_wrap(~month)+       #Faceting on a per month basis 
+  NULL</code></pre>
+<p><img src="/english/portfolio/Analysis_climatechange_files/figure-html/facet_wrap-1.png" width="648" style="display: block; margin: auto;" />
+From the above chart one can see the temperature deviation is smaller from May to August compared to September to December. This means that the Spring and Summer seasons have been more prone to greater temperature anomalies than the Fall and Winter seasons.</p>
+<p>To study the historical data, I will group data into different time periods.</p>
+<pre class="r"><code>comparison &lt;- tidyweather %&gt;% 
+  filter(Year&gt;= 1881) %&gt;%     #remove years prior to 1881
+  #create new variable &#39;interval&#39;, and assign values based on criteria below:
+  mutate(interval = case_when(           #assigning difference periods 
+    Year %in% c(1881:1920) ~ &quot;1881-1920&quot;,
+    Year %in% c(1921:1950) ~ &quot;1921-1950&quot;,
+    Year %in% c(1951:1980) ~ &quot;1951-1980&quot;,
+    Year %in% c(1981:2010) ~ &quot;1981-2010&quot;,
+    TRUE ~ &quot;2011-present&quot;
+  ))</code></pre>
+<pre class="r"><code># Set `fill` to `interval` to group and colour the data by different time periods.
+ggplot(comparison, aes(x=delta, fill=interval))+
+  geom_density(alpha=0.2) +   #density plot with tranparency set to 20%
+  theme_bw() +                #theme
+  labs (
+    title = &quot;Density Plot for Monthly Temperature Anomalies&quot;,
+    y     = &quot;Density&quot;         #changing y-axis label to sentence case
+  )</code></pre>
+<p><img src="/english/portfolio/Analysis_climatechange_files/figure-html/density_plot-1.png" width="648" style="display: block; margin: auto;" />
+- From this we can see that as time goes by, the average delta of climate change increases from negative to positive, indicating the temperature is increasing. We can also see the temperature is increasing at a larger rate since 1951.</p>
+<p>If one is also interested in average annual anomalies, we can further modified the data to produce a scatter plot as below:</p>
+<pre class="r"><code>#creating yearly averages
+average_annual_anomaly &lt;- tidyweather %&gt;% 
+  group_by(Year) %&gt;%   #grouping data by Year
+  
+  # creating summaries for mean delta 
+  # use `na.rm=TRUE` to eliminate NA (not available) values 
+  summarise(annual_average_delta = mean(delta, na.rm=TRUE)) 
+
+#plotting the data:
+ggplot(average_annual_anomaly, aes(x=Year, y= annual_average_delta))+
+  geom_point()+
+  
+  #Fit the best fit line, using LOESS method
+  geom_smooth() +
+  
+  #change to theme_bw() to have white background + black frame around plot
+  theme_bw() +
+  labs (
+    title = &quot;Average Yearly Anomaly&quot;,
+    y     = &quot;Average Annual Delta&quot;
+  )                         </code></pre>
+<p><img src="/english/portfolio/Analysis_climatechange_files/figure-html/averaging-1.png" width="648" style="display: block; margin: auto;" /></p>
+<ul>
+<li>As we can see from the plot, it corresponded to our earlier conclusion that the temperature is increasing at a larger rate starting significantly since 1960s.</li>
+</ul>
+</div>
+<div id="confidence-interval-for-delta" class="section level2">
+<h2>Confidence Interval for <code>delta</code></h2>
+<p><a href="https://earthobservatory.nasa.gov/world-of-change/decadaltemp.php">NASA points out on their website</a> that</p>
+<blockquote>
+<p>A one-degree global change is significant because it takes a vast amount of heat to warm all the oceans, atmosphere, and land by that much. In the past, a one- to two-degree drop was all it took to plunge the Earth into the Little Ice Age.</p>
+</blockquote>
+<p>I will construct confidence interval for the average annual delta since 2011, both using a formula and using a bootstrap simulation with the <code>infer</code> package. Recall that the dataframe <code>comparison</code> has already grouped temperature anomalies according to time intervals; we are only interested in what is happening between 2011-present.</p>
+<pre class="r"><code>formula_ci &lt;- comparison %&gt;% filter(interval ==&quot;2011-present&quot;) %&gt;% 
+  summarise(annual_average_delta = mean(delta, na.rm=TRUE),
+            sd_delta = sd(delta, na.rm=TRUE),
+            count = n(),
+            se_delta = sd_delta/sqrt(count),
+            t_critical = qt(0.975, count-1),
+            margin_of_error = t_critical * se_delta,
+            delta_low = annual_average_delta - margin_of_error,
+            delta_high = annual_average_delta + margin_of_error)
+
+formula_ci</code></pre>
+<pre><code>## # A tibble: 1 × 8
+##   annual_average_delta sd_delta count se_delta t_critical margin_of_error delta_low
+##                  &lt;dbl&gt;    &lt;dbl&gt; &lt;int&gt;    &lt;dbl&gt;      &lt;dbl&gt;           &lt;dbl&gt;     &lt;dbl&gt;
+## 1                 1.06    0.274   132   0.0239       1.98          0.0473      1.01
+## # … with 1 more variable: delta_high &lt;dbl&gt;</code></pre>
+<pre class="r"><code># use the infer package to construct a 95% CI for delta
+set.seed(1234)
+
+boot_delta&lt;- comparison %&gt;%
+  filter(interval ==&quot;2011-present&quot;) %&gt;%
+  specify(response = delta) %&gt;%
+  generate(reps = 1000, type = &quot;bootstrap&quot;) %&gt;%
+  calculate(stat = &quot;mean&quot;) %&gt;% 
+  get_confidence_interval(level = 0.95, type = &quot;percentile&quot;)
+  
+boot_delta</code></pre>
+<pre><code>## # A tibble: 1 × 2
+##   lower_ci upper_ci
+##      &lt;dbl&gt;    &lt;dbl&gt;
+## 1     1.02     1.11</code></pre>
+<ul>
+<li>Using both the bootstrap method and the formula method we got a 95% confidence interval for delta as (1.01,1.11).</li>
+<li>This means that we are 95% confident that the true mean for 2011-present for delta lies within the range of (1.01,1.11). We can confirm that there is a net increase in temperature since the base year.</li>
+</ul>
+</div>
+<div id="key-takeaway" class="section level2">
+<h2>Key Takeaway:</h2>
+<p>Temperatures have been steadily and significantly increasing since 2011, and the data makes this clear.</p>
+</div>
+</div>

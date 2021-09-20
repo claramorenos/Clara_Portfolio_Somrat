@@ -1,24 +1,31 @@
 ---
 categories:
-- database
-date: "2020-05-12T12:14:34+06:00"
+- design
+- development
+date: "2021-08-23T12:14:34+06:00"
 description: This is meta description.
 draft: false
-image: images/portfolio/item3.jpg
+image: images/portfolio/item7.png
+slug: clara2
+output:
+  html_document:
+    theme: flatly
+    highlight: zenburn
+    toc: yes
 project_info:
-- content: John Doe
-  icon: fas fa-user
-  name: Client
-- content: file:///Users/claramoreno/Documents/MaM_Course_Documents/Applied_Statisitcs_R/Website/Websit_ClaraMorenoSanchez/data/clara_morenosanchez.html
+#- content: John Doe
+#  icon: fas fa-user
+#  name: Client
+- content: link
   icon: fas fa-link
   name: Project Link
-- content: Add whatever you want
-  icon: fas fa-globe
-  name: New Item
-- content: This is in a loop
-  icon: fas fa-redo
-  name: Loop Item
-title: Project Title
+#- content: Add whatever you want
+#  icon: fas fa-globe
+#  name: New Item
+#- content: This is in a loop
+#  icon: fas fa-redo
+#  name: Loop Item
+title: Group Project 
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
