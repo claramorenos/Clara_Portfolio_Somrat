@@ -5,10 +5,10 @@ categories:
 date: "2021-08-23T12:14:34+06:00"
 description: This is meta description.
 draft: false
-image: images/portfolio/item7.png
+image: images/portfolio/item8.png
 slug: clara2
 output:
-  html_document:
+  html_document: 
     theme: flatly
     highlight: zenburn
     toc: yes

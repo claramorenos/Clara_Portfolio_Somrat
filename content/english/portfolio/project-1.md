@@ -26,10 +26,6 @@ project_info:
 #  icon: fas fa-redo
 #  name: Loop Item
 title: Pre Programme Project
-button:
-  enable: true
-  label: DOWNLOAD MY CV
-  link: 'file:///Users/claramoreno/Documents/MaM_Course_Documents/Applied_Statisitcs_R/Website/Websit_ClaraMorenoSanchez/content/english/portfolio/clara_morenosanchez.html'
 ---
 
 
