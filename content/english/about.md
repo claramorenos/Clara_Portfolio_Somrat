@@ -45,4 +45,4 @@ skill:
 title: KNOW MORE <br> ABOUT ME
 ---
 
-It's Clara, Data Professional passionate about Social Impact. I love using data to understand real world issues. I want to integrate my knowledge in Supply Chain Management and Data Analytics to combat Human Rights violations in your supply chain. I can help you gain visibility and mitigate risk.<br> <br> Stay connect with me........😊
+It's Clara, Data Professional passionate about Social Impact. I love using data to understand real world issues. I want to integrate my knowledge in Supply Chain Management and Data Analytics to combat Human Rights violations in your supply chain. I can help you gain visibility and mitigate risk.<br> <br> Stay connected with me........😊

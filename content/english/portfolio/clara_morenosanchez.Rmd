@@ -8,7 +8,7 @@ description: Nullam et orci eu lorem consequat tincidunt vivamus et sagittis mag
   sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem
   consequat tincidunt. Vivamus et sagittis tempus.
 draft: false
-#image: pic07.jpg
+image: item7.png
 keywords: ""
 slug: clara
 title: "Pre Programme Project"
@@ -31,7 +31,7 @@ I am Clara Moreno Sanchez, a young professional looking to gain new skills in da
 
 1.  Yoga
 2.  Go out dancing
-3.  Read (I am very fond of poetry) - attached is a poem from one of my favorite poets: ![Screen Shot 2021-08-30 at 4.39.48 PM](/Users/claramoreno/Desktop/Screen%20Shot%202021-08-30%20at%204.39.48%20PM.png)
+3.  Read (I am very fond of poetry) 
 
 I am looking forward for a **great** year at London Business School, and to meet and learn from everyone around me.
 
