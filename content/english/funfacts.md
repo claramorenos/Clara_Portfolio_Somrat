@@ -13,8 +13,8 @@ funfacts:
 #- count: "250"
  # image: images/icons/project.png
  # name: FINISHED PROJECT
-#- count: "150"
- # image: images/icons/coffee.png
- # name: CUPS OF COFFEE
-title: ""
+- count: "3"
+  image: images/icons/coffee.png
+  name: CUPS OF COFFEE A DAY
+title: FUN FACTS
 ---

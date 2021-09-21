@@ -32,7 +32,7 @@ skill:
   enable: true
   skill_list:
   - name: R Studio
-    percentage: 60%
+    percentage: 45%
   - name: Python
     percentage: 5%
   - name: Tableau

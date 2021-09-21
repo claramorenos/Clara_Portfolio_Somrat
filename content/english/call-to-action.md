@@ -1,5 +1,5 @@
 ---
-bg_image: images/backgrounds/need-service.jpg
+bg_image: images/backgrounds/Type-Writter.jpg
 button:
   enable: true
   label: SAY HELLO!
@@ -7,5 +7,5 @@ button:
 custom_attributes: ""
 custom_class: ""
 custom_css: ""
-title: NEED A SERVICE?
+title: CONTACT ME 
 ---

@@ -2,6 +2,8 @@
 title: "Climate Change Analysis"
 author: "Clara Moreno Sanchez"
 date: "`r Sys.Date()`"
+categories:
+- "R Studio"
 slug: clara2
 image: images/portfolio/climate.png
 output:
