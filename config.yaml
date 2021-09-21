@@ -15,9 +15,9 @@ markup:
 params:
   author: somrat
   description: This is meta description
-  favicon: images/logocms2.png
-  logo_dark: images/logocms2.png
-  logo_light: images/logocms2.png
+  favicon: images/logocms_2.png
+  logo_dark: images/logocms_2.png
+  logo_light: images/logocms_2.png
   logo_width: 100px
   plugins:
     css:
@@ -111,10 +111,10 @@ Languages:
           pre: '#'
           url: portfolio
           weight: 4
-        - name: Testimonial
-          pre: '#'
-          url: testimonial
-          weight: 5
+     #   - name: Testimonial
+      #    pre: '#'
+     #     url: testimonial
+      #    weight: 5
         - name: Contact
           pre: '#'
           url: contact
